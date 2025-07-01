@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHACK - Mastering Digital Infiltration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:wght@300..700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <header class="main-header">
+        <nav class="quack-nav">
+            <a href="#hero" class="quack-logo-link">
+                <img src="duck.webp" alt="QHACK Logo - Rubber Duck" class="quack-logo-img">
+                <span class="quack-logo-text">QHACK</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">&#9776;</label>
+            <ul class="quack-nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://discord.gg/KzDNyahPcv" target="_blank" aria-label="Join our Discord"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+            <div id="theme-switcher" class="duck-theme-switcher" role="button" aria-label="Toggle dark and light mode">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <img src="duck.webp" alt="QHACK Logo - Rubber Duck" class="hero-logo-img">
+                <h1 class="quack-title">
+                    <span class="team-name-interactive" data-original-text="QHACK" data-char-set="0123456789ABCDEF">
+                        <noscript>QHACK</noscript>
+                    </span>
+                </h1>
+                <p class="slogan">
+                    <span id="typewriter-text" data-words='["Mastering Digital Infiltration.", "Elevating Cybersecurity.", "Building Secure Futures.", "Solving Complex Challenges."]' class="typewriter-cursor"></span>
+                    <noscript>
+                        Mastering Digital Infiltration.
+                    </noscript>
+                </p>
+                <div class="hero-cta-buttons">
+                    <a href="#services" class="btn duck-btn-primary">Our Services</a>
+                    <a href="#courses" class="btn duck-btn-primary">View Courses</a>
+                </div>
+                <div class="scroll-down-indicator">
+                    <a href="#about" aria-label="Scroll down to learn more">
+                        <i class="fas fa-chevron-down animated-arrow"></i>
+                        <i class="fas fa-chevron-down animated-arrow delay-1"></i>
+                        <i class="fas fa-chevron-down animated-arrow delay-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="binary-feather-effect"></div>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <section id="about" class="quack-content-section">
+            <h2><i class="fas fa-fingerprint quack-icon-heading"></i> Who We Are</h2>
+            <p><strong>QHACK is a vanguard collective of ethical hackers and cybersecurity pioneers.</strong> We're not just about finding vulnerabilities; we're about forging a more secure digital future. Through competitive Capture The Flag (CTF) events, cutting-edge research, and comprehensive training, we empower the next generation of security professionals and fortify defenses for organizations worldwide.</p>
+            <div class="quack-team-members">
+                </div>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <section id="services" class="quack-content-section">
+            <h2><i class="fas fa-shield-alt quack-icon-heading"></i> Our Advanced Services</h2>
+            <p>Our expertise spans the critical domains of cybersecurity, offering tailored solutions to protect your digital assets and enhance your security posture.</p>
+            <div class="quack-service-grid">
+                <div class="quack-service-card">
+                    <i class="fas fa-terminal quack-service-icon"></i>
+                    <h3>Pentesting</h3>
+                    <p>Proactively identify and address critical vulnerabilities across your networks, applications, and infrastructure. Our thorough penetration tests simulate real-world attacks to uncover weaknesses before malicious actors can exploit them, ensuring your digital defenses are impenetrable.</p>
+                </div>
+                <div class="quack-service-card">
+                    <i class="fas fa-fire quack-service-icon"></i>
+                    <h3>Red Teaming</h3>
+                    <p>Go beyond traditional penetration testing. Our Red Teaming services simulate real-world, sophisticated attacks by mimicking advanced persistent threats (APTs) to rigorously test your organization's detection, response, and resilience capabilities. We expose blind spots and validate your security posture against the most determined adversaries.</p>
+                </div>
+                <div class="quack-service-card">
+                    <i class="fas fa-clipboard-list quack-service-icon"></i>
+                    <h3>Vulnerability Research</h3>
+                    <p>We delve deep into software and hardware to discover zero-day vulnerabilities and obscure flaws. Our responsible disclosure process ensures these weaknesses are reported and patched, contributing to a safer global digital ecosystem.</p>
+                </div>
+            </div>
+            <a href="#contact" class="btn duck-btn-primary" style="margin-top: 50px;">Get a Tailored Quote</a>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <section id="courses" class="quack-content-section">
+            <h2><i class="fas fa-book-open quack-icon-heading"></i> Elevate Your Skills</h2>
+            <p>Our meticulously designed courses are crafted to transform aspiring enthusiasts into cybersecurity experts, covering everything from foundational concepts to advanced exploitation techniques.</p>
+            <div class="quack-course-grid">
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course1-toggle" class="quack-course-toggle">
+                    <label for="course1-toggle" class="quack-course-title">
+                        <i class="fas fa-code quack-course-icon"></i> Ethical Hacking Fundamentals
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Master the core principles of cybersecurity, networking, and ethical hacking methodologies. This foundational course is perfect for aspiring security professionals and curious minds, providing a solid springboard into the world of digital defense.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course2-toggle" class="quack-course-toggle">
+                    <label for="course2-toggle" class="quack-course-title">
+                        <i class="fas fa-globe quack-course-icon"></i> Advanced Web Exploitation
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Dive deep into cutting-edge web vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), Remote Code Execution (RCE), and more. Learn to identify, exploit, and, crucially, secure common web application flaws with hands-on practice.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course3-toggle" class="quack-course-toggle">
+                    <label for="course3-toggle" class="quack-course-title">
+                        <i class="fas fa-network-wired quack-course-icon"></i> Network Security & Forensics
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Explore complex network protocols, advanced intrusion detection techniques, and digital forensics. Learn to analyze network traffic and conduct thorough incident investigations.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn duck-btn-primary" style="margin-top: 50px;">Explore All Courses</a>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <section id="contact" class="quack-cta-section">
+            <h2>Connect with QHACK</h2>
+            <p>Ready to discuss your cybersecurity needs or explore partnership opportunities? Reach out to our team directly.</p>
+            <a href="mailto:info@qhack.com" class="btn duck-btn-primary">Contact Us</a>
+        </section>
+    </main>
+
+    <footer class="quack-footer">
+        <p>&copy; 2025 Qhack. All rights reserved.</p>
+        <div class="quack-footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="index.html#contact">Contact Us</a>
+            <a href="https://discord.gg/KzDNyahPcv" target="_blank" aria-label="Join us on Discord"><i class="fab fa-discord"></i></a>
+            <!--<a href="https://x.com/qhack" target="_blank" aria-label="Follow us on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/your-instagram-handle" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>-->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

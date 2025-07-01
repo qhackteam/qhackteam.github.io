@@ -1,0 +1,764 @@
+/*
+ * style.css
+ * Crafted for a sleek, tech-savvy vibe.
+ */
+
+/* Essential fonts for the layout */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:wght@300..700&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Color palette for both light and dark themes */
+:root {
+    /* Light mode base colors */
+    --duck-bg-primary: #EEF1F7; /* Light background */
+    --duck-bg-secondary: #FFFFFF; /* Card/element background */
+    --duck-text-primary: #2C2E43; /* Main dark text */
+    --duck-text-secondary: #5A607C; /* Secondary text */
+    --quack-header-bg: rgba(255, 255, 255, 0.9); /* Header background */
+    --quack-header-shadow-color: rgba(0, 0, 0, 0.1); /* Subtle header shadow */
+
+    /* Core accent colors */
+    --duck-main-purple: #723CBB; /* Rich purple accent */
+    --duck-secondary-purple: #9D6CEE; /* Lighter purple for gradients */
+    --duck-main-yellow: #FFCE30; /* Bright, energetic yellow */
+    --duck-secondary-yellow: #FFEA90; /* Softer yellow for highlights */
+
+    /* NEW BUTTON VARIABLES - Light Mode */
+    --btn-primary-bg: var(--duck-main-yellow);
+    --btn-primary-text: var(--duck-text-primary); /* Dark text on yellow for light mode */
+    --btn-primary-hover-bg: var(--duck-main-purple); /* Changed from transparent */
+    --btn-primary-hover-text: #fff;
+
+    --btn-secondary-bg: var(--duck-main-purple);
+    --btn-secondary-text: #fff;
+    --btn-secondary-hover-bg: transparent;
+    --btn-secondary-hover-text: var(--duck-main-purple); /* Yellow text on hover for purple buttons */
+
+
+    /* Glow effects for light mode - subtle and impactful */
+    --binary-feather-glow-purple: rgba(183, 144, 240, 0.4);
+    --binary-feather-glow-yellow: rgba(255, 255, 96, 0.4);
+    --binary-feather-glow-strong-yellow: rgba(255, 255, 96, 0.7);
+
+    /* RGB values for dynamic opacities */
+    --duck-text-primary-rgb: 44, 46, 67;
+    --quack-header-shadow-rgb-value: 0, 0, 0;
+}
+
+body.dark-mode {
+    /* Dark mode base colors - deeper and more intense */
+    --duck-bg-primary: #1A0F2B; /* Dark primary background */
+    --duck-bg-secondary: #2C1844; /* Darker card/element background */
+    --duck-text-primary: #E0E0F0; /* Light text for dark mode */
+    --duck-text-secondary: #A0A0C0; /* Muted light text */
+    --quack-header-bg: rgba(26, 15, 43, 0.9); /* Darker header background */
+    --quack-header-shadow-color: rgba(0, 0, 0, 0.5); /* Prominent dark shadow */
+
+    /* Accent colors adjusted for dark backgrounds */
+    --duck-main-purple: #9D6CEE; /* Brighter purple in dark mode */
+    --duck-secondary-purple: #723CBB; /* Deeper purple for gradients */
+    --duck-main-yellow: #FFEA90; /* Softer yellow for general use */
+    --duck-secondary-yellow: #FFCE30; /* Brighter yellow for strong accents */
+
+    /* NEW BUTTON VARIABLES - Dark Mode */
+    --btn-primary-bg: var(--duck-secondary-yellow); /* Use softer yellow for main background */
+    --btn-primary-text: var(--duck-bg-primary); /* Use primary dark text color for readability on yellow */
+    --btn-primary-hover-bg: var(--duck-main-purple); /* Changed from transparent */
+    --btn-primary-hover-text: #fff; /* White text on purple hover */
+
+    --btn-secondary-bg: var(--duck-main-purple);
+    --btn-secondary-text: #fff; /* White text for contrast */
+    --btn-secondary-hover-bg: transparent;
+    --btn-secondary-hover-text: var(--duck-main-yellow); /* Yellow text on hover for purple buttons in dark mode */
+
+
+    /* Glow effects for dark mode - adapted for contrast */
+    --binary-feather-glow-purple: rgba(208, 160, 255, 0.3);
+    --binary-feather-glow-yellow: rgba(255, 255, 153, 0.3);
+    --binary-feather-glow-strong-yellow: rgba(255, 255, 153, 0.6);
+
+    /* RGB values for dark mode opacities */
+    --duck-text-primary-rgb: 224, 224, 240;
+    --quack-header-shadow-rgb-value: 0, 0, 0;
+}
+
+/* Basic page setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--duck-text-primary);
+    background-color: var(--duck-bg-primary);
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--duck-main-purple);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--duck-main-yellow);
+}
+
+/* --- Hero Logo --- */
+.hero-logo-img {
+    height: 120px; /* Adjust size as needed */
+    width: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px var(--binary-feather-glow-yellow)); /* A bit more glow for prominence */
+    transition: filter 0.3s ease;
+}
+
+/* --- Scroll Down Indicator with Animated Arrows --- */
+.scroll-down-indicator {
+    margin-top: 60px; /* Space below slogan */
+    position: relative;
+    z-index: 2; /* Ensure it's above the binary effect */
+}
+
+.scroll-down-indicator a {
+    display: block; /* Make the link take full space for clicks */
+    color: #fff; /* White for contrast on purple hero */
+    font-size: 2em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-down-indicator a:hover {
+    opacity: 1;
+}
+
+.animated-arrow {
+    display: block;
+    animation: bounce 2s infinite;
+    margin-bottom: -10px; /* Overlap arrows slightly */
+}
+
+.animated-arrow.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.animated-arrow.delay-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Styling for primary and secondary buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.duck-btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    box-shadow: 0 0 0 rgba(255, 209, 0, 0.7);
+    animation: pulse 2s infinite;
+}
+
+.duck-btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+    color: var(--btn-primary-hover-text);
+    box-shadow: 0 0 10px var(--binary-feather-glow-yellow);
+    animation: none; /* Stop pulse on hover */
+}
+
+.duck-btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-bg); /* Use its own background for border */
+}
+
+.duck-btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+    color: var(--btn-secondary-hover-text);
+    border-color: var(--binary-feather-glow-yellow); /* Yellow border glow */
+    box-shadow: 0 0 8px var(--binary-feather-glow-yellow); /* Yellow glow */
+}
+
+/* Decorative binary divider */
+.binary-divider {
+    width: 60%;
+    margin: 80px auto;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--binary-feather-glow-purple), var(--binary-feather-glow-yellow), var(--binary-feather-glow-purple), transparent);
+    position: relative;
+    opacity: 0.7;
+}
+.binary-divider::before,
+.binary-divider::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--binary-feather-glow-yellow);
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 3px var(--binary-feather-glow-yellow);
+}
+.binary-divider::before { left: 0; }
+.binary-divider::after { right: 0; }
+
+
+/* Header and main navigation */
+.main-header {
+    background-color: var(--quack-header-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0px 0px var(--quack-header-shadow-color);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.main-header.scrolled {
+    box-shadow: 0 4px 15px var(--quack-header-shadow-color);
+}
+
+.quack-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.quack-logo-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--duck-main-yellow);
+}
+
+.quack-logo-img {
+    height: 45px;
+    width: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 3px var(--binary-feather-glow-yellow));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.quack-logo-img:hover {
+    filter: drop-shadow(0 0 8px var(--binary-feather-glow-strong-yellow));
+    transform: rotate(5deg);
+}
+.quack-logo-text {
+    color: var(--duck-main-yellow);
+    transition: color 0.3s ease;
+}
+.quack-logo-link:hover .quack-logo-text {
+    color: var(--binary-feather-glow-strong-yellow);
+}
+
+
+.quack-nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.quack-nav-links li {
+    margin-left: 35px;
+}
+
+.quack-nav-links a {
+    color: var(--duck-text-primary);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--duck-main-yellow);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.quack-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Theme switcher button style */
+.duck-theme-switcher {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 1.6em;
+    color: var(--duck-text-primary);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.duck-theme-switcher:hover {
+    color: var(--duck-main-yellow);
+    transform: rotate(15deg);
+}
+
+/* Mobile navigation specifics */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 2em;
+    color: var(--duck-text-primary);
+    cursor: pointer;
+}
+
+/* Hero section for the main headline */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--duck-main-purple), var(--duck-secondary-purple));
+    color: #fff; /* Static white text on this gradient */
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    padding: 20px;
+    display: flex; /* Added to use flexbox for centering content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically if enough space */
+}
+
+.quack-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 5.5em;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: var(--duck-main-yellow);
+    text-shadow: 0 0 5px var(--binary-feather-glow-yellow), 0 0 10px rgba(255, 255, 96, 0.3);
+}
+
+/* Interactive team name, with JS fallback */
+.team-name-interactive {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+}
+.team-name-interactive noscript {
+    display: inline;
+}
+
+.team-name-interactive:hover {
+    color: var(--binary-feather-glow-strong-yellow);
+    text-shadow: 0 0 10px var(--binary-feather-glow-strong-yellow), 0 0 25px rgba(255, 255, 96, 0.7);
+}
+
+/* Slogan text with typewriter effect */
+.slogan {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    font-weight: 300;
+    height: 1.8em;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--binary-feather-glow-purple); /* Blinking cursor visual */
+    color: #E0E0F0; /* Light color for slogan on dark hero background */
+    padding-right: 5px;
+}
+
+.slogan noscript {
+    display: inline;
+    border-right: none;
+    overflow: visible;
+    white-space: normal;
+}
+
+/* Hero CTA Buttons */
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px; /* Adjust spacing below slogan */
+    position: relative;
+    z-index: 2; /* Ensure buttons are above background effects */
+}
+
+.hero-cta-buttons .btn {
+    min-width: 180px; /* Slightly adjust button width if needed */
+}
+
+/* Subtle binary pattern overlay */
+.binary-feather-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0px, transparent 1px, transparent 15px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0px, transparent 1px, transparent 15px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    animation: binaryFade 10s linear infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes binaryFade {
+    0% { opacity: 0.05; background-position: 0 0; }
+    100% { opacity: 0.15; background-position: 300px 300px; }
+}
+
+
+/* General styling for content sections */
+.quack-content-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quack-content-section h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: var(--duck-main-purple);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-icon-heading {
+    margin-right: 15px;
+    color: var(--duck-main-yellow);
+    font-size: 0.8em;
+    filter: drop-shadow(0 0 3px var(--binary-feather-glow-yellow));
+}
+
+.quack-content-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--duck-text-secondary);
+}
+
+/* Grid layout for services and courses */
+.quack-service-grid, .quack-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Styling for individual service and course cards */
+.quack-service-card, .quack-course-item {
+    background-color: var(--duck-bg-secondary);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--quack-header-shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Animated gradient border on hover for cards */
+.quack-service-card::before, .quack-course-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, var(--binary-feather-glow-purple), transparent 30%, transparent, var(--binary-feather-glow-yellow), transparent 70%, transparent);
+    z-index: 0;
+    transform: rotate(0deg);
+    transition: transform 0.5s linear, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.quack-service-card:hover::before, .quack-course-item:hover::before {
+    transform: rotate(360deg);
+    opacity: 1;
+    animation: rotateBorder 3s linear infinite;
+}
+@keyframes rotateBorder {
+    to { transform: rotate(360deg); }
+}
+
+.quack-service-card::after, .quack-course-item::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: var(--duck-bg-secondary);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+
+.quack-service-card h3, .quack-course-item h3 {
+    color: var(--duck-main-purple);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    position: relative;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-service-card p, .quack-course-item p {
+    position: relative;
+    z-index: 2;
+}
+
+.quack-service-icon, .quack-course-icon {
+    font-size: 2.2em;
+    color: var(--duck-main-purple);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 3px var(--binary-feather-glow-purple));
+    transition: filter 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.quack-service-card:hover .quack-service-icon, .quack-course-item:hover .quack-course-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--binary-feather-glow-yellow));
+}
+
+
+/* CSS-only accordion for course details */
+.quack-course-toggle {
+    display: none;
+}
+
+.quack-course-title {
+    display: block;
+    cursor: pointer;
+    background-color: var(--duck-secondary-yellow); /* Changed from transparent to match original design */
+    color: #1A0F2B;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-course-title:hover {
+    background-color: var(--duck-main-yellow);
+    color: #1A0F2B; /* Changed to primary text color */
+    box-shadow: 0 0 8px var(--binary-feather-glow-yellow);
+}
+
+.quack-course-title::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+    color:#1A0F2B;
+}
+
+.quack-course-toggle:checked + .quack-course-title::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.quack-course-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: var(--duck-bg-secondary);
+    border-radius: 0 0 8px 8px;
+    padding: 0 20px;
+    border-top: 1px solid rgba(var(--duck-text-primary-rgb), 0.05);
+    z-index: 2;
+}
+
+.quack-course-toggle:checked ~ .quack-course-details {
+    max-height: 300px;
+    padding: 20px;
+}
+
+.quack-course-details .btn {
+    margin-top: 15px;
+}
+
+
+/* Call to action section */
+.quack-cta-section {
+    background: linear-gradient(45deg, var(--duck-main-yellow), var(--duck-secondary-yellow));
+    color: var(--duck-bg-primary); /* This ensures dark text on yellow in light mode, and light text on yellow in dark mode */
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.quack-cta-section h2 {
+    color: var(--duck-main-purple);
+    font-size: 3.5em;
+    margin-bottom: 30px; /* Adjusted margin */
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-cta-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 40px; /* Space before button */
+    color: #1A0F2B;
+}
+
+/* Footer styling */
+.quack-footer {
+    background-color: #111111;
+    color: var(--duck-text-secondary);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quack-footer .quack-footer-links a {
+    color: var(--duck-main-yellow);
+    margin: 0 15px;
+}
+
+.quack-footer .quack-footer-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--binary-feather-glow-yellow);
+}
+
+/* Keyframe animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 209, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 209, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 209, 0, 0);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .quack-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .quack-nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .quack-nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-toggle:checked ~ .quack-nav-links {
+        display: flex;
+    }
+
+    .duck-theme-switcher {
+        position: absolute;
+        top: 15px;
+        right: 70px;
+        font-size: 1.2em;
+    }
+
+    .quack-title {
+        font-size: 2.8em;
+        letter-spacing: 1px;
+    }
+
+    .slogan {
+        font-size: 1.2em;
+    }
+
+    .quack-content-section h2 {
+        font-size: 2em;
+    }
+    .quack-content-section h2 .quack-icon-heading {
+        font-size: 0.9em;
+        margin-right: 10px;
+    }
+
+    .quack-cta-section h2 {
+        font-size: 2.2em;
+    }
+
+    .binary-divider {
+        width: 80%;
+    }
+
+    /* Responsive adjustment for Hero CTA buttons */
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
