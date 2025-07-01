@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHACK - All Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:wght@300..700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <header class="main-header">
+        <nav class="quack-nav">
+            <a href="index.html#hero" class="quack-logo-link">
+                <img src="duck.webp" alt="QHACK Logo - Rubber Duck" class="quack-logo-img">
+                <span class="quack-logo-text">QHACK</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">&#9776;</label>
+            <ul class="quack-nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="courses-list.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://discord.gg/your-discord-invite" target="_blank" aria-label="Join our Discord"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+            <div id="theme-switcher" class="duck-theme-switcher" role="button" aria-label="Toggle dark and light mode">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="page-hero" class="hero-section small-hero">
+            <div class="hero-content">
+                <h1 class="quack-title small-title">Our Courses</h1>
+                <p class="slogan static-slogan">Expand your cybersecurity expertise with our comprehensive training programs.</p>
+                <div class="scroll-down-indicator">
+                    <a href="#all-courses" aria-label="Scroll down to view courses">
+                        <i class="fas fa-chevron-down animated-arrow"></i>
+                        <i class="fas fa-chevron-down animated-arrow delay-1"></i>
+                        <i class="fas fa-chevron-down animated-arrow delay-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="binary-feather-effect"></div>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <section id="all-courses" class="quack-content-section">
+            <h2><i class="fas fa-book-open quack-icon-heading"></i> All Learning Paths</h2>
+            <p>From foundational concepts to advanced exploitation, discover the right course to elevate your skills.</p>
+            <div class="quack-course-grid">
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course1-toggle" class="quack-course-toggle">
+                    <label for="course1-toggle" class="quack-course-title">
+                        <i class="fas fa-code quack-course-icon"></i> Ethical Hacking Fundamentals
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Master the core principles of cybersecurity, networking, and ethical hacking methodologies. This foundational course is perfect for aspiring security professionals and curious minds, providing a solid springboard into the world of digital defense.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course2-toggle" class="quack-course-toggle">
+                    <label for="course2-toggle" class="quack-course-title">
+                        <i class="fas fa-globe quack-course-icon"></i> Advanced Web Exploitation
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Dive deep into cutting-edge web vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), Remote Code Execution (RCE), and more. Learn to identify, exploit, and, crucially, secure common web application flaws with hands-on practice.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course3-toggle" class="quack-course-toggle">
+                    <label for="course3-toggle" class="quack-course-title">
+                        <i class="fas fa-network-wired quack-course-icon"></i> Network Security & Forensics
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Explore complex network protocols, advanced intrusion detection techniques, and digital forensics. Learn to analyze network traffic and conduct thorough incident investigations.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="quack-course-item">
+                    <input type="checkbox" id="course4-toggle" class="quack-course-toggle">
+                    <label for="course4-toggle" class="quack-course-title">
+                        <i class="fas fa-server quack-course-icon"></i> Cloud Security Essentials
+                    </label>
+                    <div class="quack-course-details">
+                        <p>Learn to secure cloud environments, identify misconfigurations, and implement robust security controls for popular cloud platforms like AWS, Azure, and GCP.</p>
+                        <a href="#" class="btn duck-btn-secondary">Enroll Now</a>
+                    </div>
+                </div>
+
+            </div>
+            <p style="margin-top: 50px;">Can't find what you're looking for? <a href="index.html#contact">Contact us</a> for custom training solutions.</p>
+        </section>
+    </main>
+
+    <footer class="quack-footer">
+        <p>&copy; 2025 Qhack. All rights reserved.</p>
+        <div class="quack-footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="index.html#contact">Contact Us</a>
+            <a href="https://discord.gg/KzDNyahPcv" target="_blank" aria-label="Join us on Discord"><i class="fab fa-discord"></i></a>
+            <!--<a href="https://x.com/qhack" target="_blank" aria-label="Follow us on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/your-instagram-handle" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>-->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

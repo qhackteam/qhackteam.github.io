@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHACK - Article Title Here</title> <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto+Mono:wght@300..700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <header class="main-header">
+        <nav class="quack-nav">
+            <a href="index.html#hero" class="quack-logo-link">
+                <img src="duck.webp" alt="QHACK Logo - Rubber Duck" class="quack-logo-img">
+                <span class="quack-logo-text">QHACK</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">&#9776;</label>
+            <ul class="quack-nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="courses-list.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li> <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://discord.gg/your-discord-invite" target="_blank" aria-label="Join our Discord"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+            <div id="theme-switcher" class="duck-theme-switcher" role="button" aria-label="Toggle dark and light mode">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="article-hero" class="hero-section small-hero">
+            <div class="hero-content">
+                <h1 class="quack-title small-title">Article Title: Deep Dive into XSS</h1> <p class="slogan static-slogan">By **[Author Name]** | June 30, 2025 | Categories: #WebSecurity #Vulnerability</p>
+            </div>
+            <div class="binary-feather-effect"></div>
+        </section>
+
+        <div class="binary-divider"></div>
+
+        <article class="quack-content-section article-content">
+            <p class="lead-paragraph">
+                This is the **introduction** to your article, setting the stage for the deep dive.
+                It should hook the reader and briefly outline what the article will cover.
+                You can use strong tags for emphasis, just like in your other content.
+            </p>
+
+            <img src="article-main-image.webp" alt="Main Article Image" class="article-image">
+            <figcaption>A descriptive caption for the main image.</figcaption>
+
+            <h2>Understanding Cross-Site Scripting (XSS)</h2>
+            <p>
+                Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are
+                injected into otherwise benign and trusted websites. XSS attacks occur when an attacker
+                uses a web application to send malicious code, generally in the form of a browser side script,
+                to a different end user.
+            </p>
+
+            <h3>Types of XSS</h3>
+            <ul>
+                <li>**Stored XSS (Persistent XSS):** The malicious script is stored permanently on the target server.</li>
+                <li>**Reflected XSS (Non-Persistent XSS):** The malicious script is reflected off of a web server.</li>
+                <li>**DOM-based XSS:** The vulnerability lies in the client-side code rather than the server-side code.</li>
+            </ul>
+
+            <h2><i class="fas fa-code-branch quack-icon-heading"></i> Technical Breakdown</h2>
+            <p>
+                Let's explore a simple example of a Reflected XSS vulnerability. Imagine a search bar that doesn't properly sanitize user input.
+            </p>
+            <pre><code class="language-html">&lt;!-- Vulnerable HTML for a search result --&gt;
+&lt;p&gt;Search results for: &lt;%= request.getParameter("query") %&gt;&lt;/p&gt;</code></pre>
+            <p>
+                An attacker could inject a script like:
+            </p>
+            <pre><code class="language-javascript">&lt;script&gt;alert('You are pwned!');&lt;/script&gt;</code></pre>
+            <p>
+                If the application doesn't escape the input, the browser would execute the script, leading to an alert box, or worse, session hijacking.
+            </p>
+
+            <h3>Exploitation Steps (Example)</h3>
+            <ol>
+                <li>Attacker crafts a malicious URL containing the XSS payload.</li>
+                <li>Attacker sends the URL to a victim.</li>
+                <li>Victim clicks the URL.</li>
+                <li>Browser executes the malicious script from the trusted website.</li>
+                <li>Attacker steals cookies, redirects the user, or defaces the site.</li>
+            </ol>
+
+            <h2>Mitigation Strategies</h2>
+            <p>Preventing XSS largely relies on proper input validation and output encoding.</p>
+            <pre><code class="language-php">&lt;?php
+// PHP example of output encoding
+echo htmlspecialchars($user_input, ENT_QUOTES, 'UTF-8');
+?&gt;</code></pre>
+            <p>
+                Content Security Policy (CSP) is another powerful defense mechanism that helps prevent a wide range of injection attacks.
+            </p>
+
+            <h2><i class="fas fa-check-circle quack-icon-heading"></i> Conclusion</h2>
+            <p>
+                XSS remains a prevalent and dangerous vulnerability. By understanding its types and implementing robust security practices,
+                developers and security professionals can significantly reduce the risk. Always sanitize inputs, encode outputs, and consider implementing a strong CSP.
+            </p>
+
+            <div class="article-tags">
+                <span>Tags:</span>
+                <a href="blog.html?tag=websecurity" class="tag-link">#WebSecurity</a>
+                <a href="blog.html?tag=xss" class="tag-link">#XSS</a>
+                <a href="blog.html?tag=vulnerability" class="tag-link">#Vulnerability</a>
+            </div>
+
+            <div class="author-box">
+                <img src="author-avatar.webp" alt="Author Avatar" class="author-avatar">
+                <div class="author-info">
+                    <h4>About the Author: [Author Name]</h4>
+                    <p>
+                        [Author Name] is a cybersecurity enthusiast and researcher at QHACK, specializing in web application vulnerabilities and ethical hacking.
+                        With a passion for making the internet a safer place, [Author Name] regularly contributes to open-source security projects.
+                    </p>
+                    <a href="https://x.com/author-twitter" target="_blank" aria-label="Author's Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+            </div>
+
+            <div class="return-to-blog">
+                <a href="blog.html" class="btn duck-btn-secondary"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="quack-footer">
+        <p>&copy; 2025 Qhack. All rights reserved.</p>
+        <div class="quack-footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="index.html#contact">Contact Us</a>
+            <a href="https://discord.gg/KzDNyahPcv" target="_blank" aria-label="Join us on Discord"><i class="fab fa-discord"></i></a>
+            <!--<a href="https://x.com/qhack" target="_blank" aria-label="Follow us on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/your-instagram-handle" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>-->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
